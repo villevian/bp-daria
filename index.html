@@ -72,13 +72,13 @@ const TRACKS=[["all", "For everyone"], ["it", "IT"], ["pm", "Project managers"],
 
 /* Student pages: set STUDENT and ASSIGNED; template shows everything */
 const STUDENT={"name": "Daria", "track": "all", "code": "8494391536082ca5e15a32cebbf3921b"};            // e.g. {name:"Larysa", track:"all"}
-const ASSIGNED={"1.2": {"track": "all", "pages": ["lesson", "hw", "extra"]}, "6.1": {"track": "all", "pages": ["lesson", "hw"]}};
+const ASSIGNED={"1.2": {"track": "all", "pages": ["lesson", "hw", "extra", "games"]}, "6.1": {"track": "all", "pages": ["lesson", "hw"]}};
 const SHOW_ALL=true;  // student page: show the whole level, open only assigned lessons           // e.g. {"1.1":"all","1.2":"all"} — null = show all
 const PROGRESS={};const COMMENTS={};
 const VARIANTS={"1.2": ["all"], "6.1": ["all"]};
-const PAGES={"1.2": ["lesson", "hw", "extra"], "6.1": ["lesson", "hw"]};  // pages ready per lesson in the template; missing → all three  // which track versions exist; missing → "all"             // filled from Supabase: {"1.1":"done","1.2":"progress"}
+const PAGES={"1.2": ["lesson", "hw", "extra", "games"], "6.1": ["lesson", "hw"]};  // pages ready per lesson in the template; missing → all three  // which track versions exist; missing → "all"             // filled from Supabase: {"1.1":"done","1.2":"progress"}
 let track=(STUDENT&&STUDENT.track)||"all";
-const path=(n,t,f)=>`lessons/${n.replace(".","-").toLowerCase()}/${t}/${f}.html?v=202611190759`;
+const path=(n,t,f)=>`lessons/${n.replace(".","-").toLowerCase()}/${t}/${f}.html?v=202611190812`;
 function render(){
  const box=document.getElementById("units");box.innerHTML="";let tot=0,done=0;
  DATA.units.forEach(([u,title,ls])=>{
